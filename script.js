@@ -1,12 +1,13 @@
 function getTest() {
 
-  var el = ['b.png','MOVIE','Kevin Adam Curtis','New Documentary!'];
+  var altElements = ['b.png','MOVIE','Kevin Adam Curtis','New Documentary!'];
 
   var random = getRandomInt();
-  var scenario = el[random];
+  var scenario = altElements[random];
 
-  // Shows in console which random scenario was picked and updated on page
-  console.log('random, scenario no. ' + random + ' --> ' + scenario);
+  // Shows in console random scenario updated on page
+  var el2 = random + 1;
+  console.log('random, scenario no. ' + el2 + ' --> ' + scenario);
   
   if(random === 0) {
       getImage();
@@ -19,7 +20,7 @@ function getTest() {
   }
 
   function getRandomInt() {
-    return Math.floor(Math.random() * 4);
+    return Math.floor(Math.random() * altElements.length);
   }
 
   function getText(klass) {
