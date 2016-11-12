@@ -1,9 +1,9 @@
-##Ver1
+##Ver1 commit
 - Simple text based prorotype and JS script
 - picking up randomly from the array of scearios
 - change on each pageload
 
-##Ver2 
+##Ver2 commit
 - A tile has replaced text based UI
 - Image A/B test amended
 - No history stored to ensure all 4 scearios in random order will be displayed before starting again.
