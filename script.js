@@ -1,28 +1,33 @@
 function getTest() {
 
-  var el = ['1-image','2-category','3-brand-title','4-episode-title'];
+  var el = ['b.png','MOVIE','Kevin Adam Curtis','New Documentary!'];
 
-  var random = getRandomInt(1, 4);
-  var scenario = el[random-1];
+  var random = getRandomInt();
+  var scenario = el[random];
+
+  // Shows in console which random scenario was picked and updated on page
+  console.log('random, scenario no. ' + random + ' --> ' + scenario);
   
-  if(random === 1) {
-      getScenario('js-image');
+  if(random === 0) {
+      getImage();
+  } else if(random === 1) {
+      getText('tile__category');
   } else if(random === 2) {
-      getScenario('js-category');
-  } else if(random === 3) {
-      getScenario('js-brand-title');
+      getText('tile__brand-title');
   } else {
-      getScenario('js-episode-title');
+      getText('tile__episode-title');
   }
 
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+  function getRandomInt() {
+    return Math.floor(Math.random() * 4);
   }
 
-  function getScenario(klass) {
+  function getText(klass) {
     document.getElementsByClassName(klass)[0].textContent = scenario;
+  }
+
+  function getImage() {
+    document.getElementsByTagName('img')[0].setAttribute('src', 'img/b.png');
   }
 
 }
