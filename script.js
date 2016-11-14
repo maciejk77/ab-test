@@ -3,10 +3,15 @@ function runTest() {
   var baseElements = ['img/b.png','MOVIE','Kevin Adam Curtis','New Documentary!'];
   var toDoElements = baseElements;
   var nodesList = document.getElementsByClassName('tile')[0].children;
+  var testsNum = [0,1,2,3];
   var pattern = new RegExp('^img/');
   var randomInt = getRandomInt();
   var test = pattern.test(toDoElements[randomInt]);
+  
+  // Shows which test has been rendered to the screen
   console.log('changed element at index ' + randomInt + ' to ' + toDoElements[randomInt]);
+  // Control array of scenarios 
+  console.log(testsNum);
 
   getScenario();
 
@@ -20,7 +25,10 @@ function runTest() {
   }
 
   function getRandomInt() {
-    return Math.floor(Math.random() * toDoElements.length);
+    var result = Math.floor(Math.random() * testsNum.length);
+    var number = testsNum[result];
+    removeTestNum(result);
+    return number;
   }
 
   function setText() {
@@ -34,6 +42,13 @@ function runTest() {
   function getKlass(randomInt) {
     return nodesList[randomInt].getAttribute('class');
   }
+
+  function removeTestNum(number) {
+    for(var i=0; i<testsNum.length; i++) {
+      if(testsNum[i] === number) { testsNum.splice(i,1) };
+    }
+  }
+
 }
 
 
