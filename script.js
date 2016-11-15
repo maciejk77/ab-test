@@ -35,14 +35,14 @@ function runTest() {
   }
 
   function setText() {
-    document.getElementsByClassName(getKlass(randomInt))[0].textContent = toDoElements[randomInt];
+    document.getElementsByClassName(getClass(randomInt))[0].textContent = toDoElements[randomInt];
   }
 
   function setImage() {
-    document.getElementsByTagName('img')[0].setAttribute('src', 'img/b.png');
+    document.getElementsByTagName('img')[0].setAttribute('src', baseElements[0]);
   }
 
-  function getKlass(randomInt) {
+  function getClass(randomInt) {
     return nodesList[randomInt].getAttribute('class');
   }
 
